@@ -9,5 +9,5 @@ trait Rat {
 }
 
 object Rat {
-  type Aux[A <: Nat, B <: Succ[_]] = Rat { type Denom = A; type Numer = B}
+  type Aux[A <: Nat, B <: Succ[_]] = Rat { type Denom = A; type Numer = B }
 }
