@@ -12,6 +12,7 @@ class SimplifyTests extends FlatSpec with Matchers {
 
     simplify[_8 / _4, _2 / _1]
     simplify[_4 / _6, _2 / _3]
+    simplify[_0 / _9, _0 / _1]
 
     illTyped("simplify[_3 / _6, _2 / _3]", ".*could not find implicit.*")
   }
