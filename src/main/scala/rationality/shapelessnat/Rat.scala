@@ -4,10 +4,10 @@ package shapelessnat
 import shapeless.{Nat, Succ}
 
 trait Rat {
-  type Denom <: Nat
-  type Numer <: Succ[_]
+  type Numerator <: Nat
+  type Denominator <: Succ[_]
 }
 
 object Rat {
-  type Aux[A <: Nat, B <: Succ[_]] = Rat { type Denom = A; type Numer = B }
+  type Aux[A <: Nat, B <: Succ[_]] = Rat { type Numerator = A; type Denominator = B }
 }
