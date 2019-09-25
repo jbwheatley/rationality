@@ -7,7 +7,6 @@ trait Mult[A <: Rat, B <: Rat] {
   type Out <: Rat
 }
 
-
 object Mult {
 
   type Aux[A <: Rat, B <: Rat, Out0 <: Rat] = Mult[A, B] { type Out = Out0 }
