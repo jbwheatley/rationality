@@ -6,7 +6,7 @@ import shapeless.nat._
 
 class MultTests extends FlatSpec with Matchers {
 
-  def multiply[A <: Rat, B <: Rat](implicit ev: Mult[A, B]): Option[ev.Out] = Option.empty[ev.Out]
+  def multiply[A <: Rat, B <: Rat](implicit ev: A x B): Option[ev.Out] = Option.empty[ev.Out]
 
   "multiply" should "correctly multiply fractions" in {
 

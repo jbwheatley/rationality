@@ -7,9 +7,9 @@ import shapeless.test.illTyped
 
 class EqualsTests extends FlatSpec with Matchers {
 
-  def equality[A <: Rat, B <: Rat](implicit ev: Equals[A, B]): Equals[A, B] = ev
+  def equality[A <: Rat, B <: Rat](implicit ev: A === B): A === B = ev
 
-  "equals" should "correctly check equality of rationals" in {
+  "equals" should "correctly check equality of fractions" in {
 
     equality[_3 / _1, _6 / _2]
     equality[_6 / _2, _3 / _1]

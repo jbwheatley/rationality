@@ -7,7 +7,7 @@ import shapeless.nat._
 package object shapelessnat {
 
   type /[A <: Nat, B <: Succ[_]] = Aux[A, B]
-  type *[A <: Rat, B <: Rat] = Mult[A, B]
+  type x[A <: Rat, B <: Rat] = Mult[A, B]
   type +[A <: Rat, B <: Rat] = Sum[A, B]
   type -[A <: Rat, B <: Rat] = Minus[A, B]
 

@@ -7,11 +7,14 @@ trait LessThan[A <: Rat, B <: Rat]
 
 object LessThan {
 
-  implicit def simple[A <: Nat, B <: Succ[_], C <: Nat](implicit lt: LT[A, C]): LessThan[A / B, C / B] = null
+  implicit def equalDenominators[A <: Nat, B <: Succ[_], C <: Nat](implicit lt: LT[A, C]): LessThan[A / B, C / B] = null
 
-  implicit def nonEqualDenominators[A <: Nat, B <: Succ[_], C <: Nat, D <: Succ[_], AD <: Nat, CB <: Nat]
+  implicit def equalNumerators[A <: Nat, B <: Succ[_], D <: Succ[_]](implicit lt: LT[D, B]): LessThan[A / B, A / D] = null
+
+  implicit def nonEqualDenominatorsAndNumerators[A <: Nat, B <: Succ[_], C <: Nat, D <: Succ[_], AD <: Nat, CB <: Nat]
   (implicit
-   ev: B =:!= D,
+   ev1: A =:!= C,
+   ev2: B =:!= D,
    ad: Prod.Aux[A, D, AD],
    cb: Prod.Aux[C, B, CB],
    lt: LT[AD, CB]
