@@ -5,7 +5,7 @@ import shapeless.nat._
 
 class SumTests extends FlatSpec with Matchers {
 
-  def sum[A <: Rat, B <: Rat](implicit ev: Sum[A, B]): Option[ev.Out] = Option.empty[ev.Out]
+  def sum[A <: Rat, B <: Rat](implicit ev: A + B): Option[ev.Out] = Option.empty[ev.Out]
 
   "sum" should "correctly sum fractions" in {
 
