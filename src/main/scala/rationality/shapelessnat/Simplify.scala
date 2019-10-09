@@ -14,10 +14,10 @@ object Simplify {
 
   implicit def zeroCase[B <: Succ[_]]: Aux[_0 / B, _0 / _1] = null
 
-  implicit def simplify[A <: Nat, B <: Succ[_], _GCD <: Nat, divBOut <: Succ[_]]
+  implicit def simplify[A <: Nat, B <: Succ[_], _GCD <: Nat, DivAOut <: Succ[_], DivBOut <: Succ[_]]
   (implicit gcd: GCD.Aux[A, B, _GCD],
-   divA: Div[A, _GCD],
-   divB: Div.Aux[B, _GCD, divBOut],
+   divA: Div.Aux[A, _GCD, DivAOut],
+   divB: Div.Aux[B, _GCD, DivBOut],
    ev: A =:!= _0
-  ): Aux[A / B, divA.Out / divBOut] = null
+  ): Aux[A / B, DivAOut / DivBOut] = null
 }
