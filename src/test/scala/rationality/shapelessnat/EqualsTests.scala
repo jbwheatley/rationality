@@ -17,6 +17,6 @@ class EqualsTests extends FlatSpec with Matchers {
     equality[_2 / _5, _2 / _5]
     equality[_0 / _1, _0 / _5]
 
-    illTyped("equality[_1 / _2, _2 / _5]", ".*diverging implicit.*")
+    illTyped("equality[_1 / _2, _2 / _5]", ".*could not find implicit value*")
   }
 }
